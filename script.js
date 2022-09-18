@@ -56,7 +56,7 @@ function writePassword() {
     }
 
     // Generate password based on user's input
-    for (var i = 0; i <= passwdLength; i++){
+    for (var i = 0; i < passwdLength; i++){
       var randomnumber = Math.floor(Math.random() * chars.length);
       tempPasswd += chars.substring(randomnumber, randomnumber + 1);
     }
