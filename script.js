@@ -13,10 +13,14 @@ function writePassword() {
     var passwdLength;
     var lowCase, upCase, num, specialChar;
     var chars = "", tempPasswd = "";
-
+    var x;
     // Ask user for password length. Must be between 8 - 128 characters
     do  {
       passwdLength = prompt("Enter password length (between 8 - 128 characters): ", 8);
+      // Verify the input is numeric, otherwise ask again
+      if (isNaN(passwdLength)) {
+        passwdLength = -1;
+      }
     } while ((passwdLength < 8) || (passwdLength > 128));
     // Ask user what characters to include in the password: lowercase, uppercase, numbers,
     // and/or special characters.
